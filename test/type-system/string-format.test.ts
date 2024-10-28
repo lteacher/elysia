@@ -62,4 +62,19 @@ describe('TypeSystem - ObjectString', () => {
 
 		expect(await (res1).json()).toEqual({ date: testString })
 	})
+	it('Format time', async () => {
+		const testString = '08:00:00'
+		const app = new Elysia().get('/', ({ query }) => query, {
+			query: t.Object({
+				time: t.String({
+					format: 'time'
+				})
+			})
+		})
+
+		const res1 = await app.handle(req(`/?time=${testString}`))
+		expect(res1.status).toBe(200)
+
+		expect(await res1.json()).toEqual({ time: testString })
+	})
 })

@@ -37,7 +37,7 @@ export const fullFormats = {
 	// date: http://tools.ietf.org/html/rfc3339#section-5.6
 	date,
 	// date-time: http://tools.ietf.org/html/rfc3339#section-5.6
-	time: getTime(true),
+	time: getTime(false),
 	'date-time': getDateTime(true),
 	'iso-time': getTime(false),
 	'iso-date-time': getDateTime(false),
